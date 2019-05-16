@@ -9,7 +9,7 @@ import SingleProductPage from './pages/SingleProductPage'
 import { Route, Link, Switch ,BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import Home from './home'
+import Home from './Home'
 import { FaBeer } from 'react-icons/fa';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -19,7 +19,7 @@ import Sidecar from './components/Sidecar'
 
 
 
-function App() {
+export default function App() {
   return  < >
    { /*navbar, sidebar,cart,footer */}
 <Navbar />
@@ -48,4 +48,4 @@ function App() {
   
 }
 
-export default App;
+

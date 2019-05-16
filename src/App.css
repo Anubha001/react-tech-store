@@ -7,6 +7,8 @@
   --darkGrey: #5f5e5e;
   --mainWhite: #fff;
   --mainBlack: #222;
+  --mainOrange:rgb(165, 163, 42);
+  --mainRed:#b32d00;
   --mainTransition: all 0.3s ease-in-out;
   --mainSpacing: 0.3rem;
 }
