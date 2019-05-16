@@ -4,6 +4,7 @@ function Footer() {
   return (
     <div>
       hello from footer
+      fuhgygjb
     </div>
   )
 }
