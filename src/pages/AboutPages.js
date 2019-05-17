@@ -1,9 +1,12 @@
-import React from 'react'
-
+import React from 'react';
+import Info from '../AboutPage/Info';
+import Hero  from '../components/Hero';
+import aboutBcg from '../images/aboutBcg.jpeg'
 function AboutPages() {
   return (
     <div>
-      hello froom about AboutPages
+     <Hero img={aboutBcg}/>
+     <Info />
     </div>
   )
 }

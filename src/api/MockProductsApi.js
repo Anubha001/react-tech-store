@@ -22,7 +22,9 @@ const PRODUCT_CATEGORIES = [
     'FASHION',
     'MOBILES',
     'LAPTOPS',
-    'CAMERA'
+    'CAMERA',
+    'DAILY-PRODUCTS',
+    'BEAUTY'
 ];
 
 function createProducts(n) {
@@ -38,7 +40,7 @@ function createProducts(n) {
     return products;
 }
 
-const initialProducts = createProducts(50);
+const initialProducts = createProducts(100);
 
 
 export default class MockProductsApi {

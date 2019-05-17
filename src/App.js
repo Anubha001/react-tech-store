@@ -40,7 +40,7 @@ export default function App() {
 
 <Route path="/product/:id" component = { SingleProductPage }/>
 
-<Route component = { Default }/>
+<Route component = { Default } />
        </Switch>
 
        <Footer />

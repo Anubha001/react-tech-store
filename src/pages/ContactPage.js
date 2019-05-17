@@ -1,9 +1,13 @@
 import React from 'react'
+import Hero from '../components/Hero'
+import contactImg from "../images/contactBcg.jpeg"
+import Contact from '../pages/Contact'
 
 function ContactPage() {
   return (
     <div>
-       hello froom about contactPages
+     <Hero img={contactImg}> </Hero>
+     <Contact></Contact>
     </div>
   )
 }

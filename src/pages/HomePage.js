@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-import {  ProductConsumer } from '..//context/context'
-
-export default class HomePage extends Component {
-  render() {
-    return (
-      <div>
-        <ProductConsumer>
-        {value => {
-          console.log(value);
-          return <h1>Hello from HomePage</h1>;
-        }}
-      </ProductConsumer>
-      </div>
-    )
-  }
+import { Link } from "react-router-dom";
+import Hero from '../components/Hero'
+import Service from '../homepage/Service'
+import Feature from '../homepage/Feature'
+export default function HomePage() {
+  return (
+    <>
+      <Hero title="awesome gadgets" max="true">
+        <Link style={{margin:'2rem'}}className ="main-link" to="/product">our products</Link>
+      </Hero>
+      <Service></Service>
+      <Feature></Feature>
+    </>
+  );
 }

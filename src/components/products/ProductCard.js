@@ -15,9 +15,15 @@ export default class ProductCard extends React.Component {
                     <label>Name</label>
                     <label>{name}</label>
                 </div>
+
                 <div>
                     <label>Category</label>
                     <label>{category}</label>
+                </div>
+  
+                <div>
+                    <label>id</label>
+                    <label>{id}</label>
                 </div>
             </div>
         );
