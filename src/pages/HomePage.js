@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <>
       <Hero title="awesome gadgets" max="true">
-        <Link style={{margin:'2rem'}}className ="main-link" to="/product">our products</Link>
+        <Link style={{margin:'2rem'}}className ="main-link" to="/Products">our products</Link>
       </Hero>
       <Service></Service>
       <Feature></Feature>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logo from '../../images/aboutBcg.jpeg'
 import './ProductCard.css';
 
 export default class ProductCard extends React.Component {
@@ -7,10 +7,17 @@ export default class ProductCard extends React.Component {
         const {
             id,
             name,
-            category
+            category,
+            types,
+            logo
         } = this.props;
         return (
             <div className='product-card'>
+         
+<div>
+                    <label>id</label>
+                    <label>{id}</label>
+                </div>
                 <div>
                     <label>Name</label>
                     <label>{name}</label>
@@ -20,11 +27,14 @@ export default class ProductCard extends React.Component {
                     <label>Category</label>
                     <label>{category}</label>
                 </div>
-  
                 <div>
-                    <label>id</label>
-                    <label>{id}</label>
+                    <label>Images</label>
+                    <br></br>
+                    <label>{logo}</label>
+                   
                 </div>
+  
+  
             </div>
         );
     }

@@ -30,11 +30,12 @@ const PRODUCT_CATEGORIES = [
 function createProducts(n) {
     let products = [];
     for (let i =0; i < n; i++) {
-        const category = PRODUCT_CATEGORIES[randBetween(0, PRODUCT_CATEGORIES.length)]; 
+        const category = PRODUCT_CATEGORIES[randBetween(0, PRODUCT_CATEGORIES.length)];
         products.push({
             id: i,
             name: 'Product_' + i,
-            category
+            category,
+        
         });
     }
     return products;
@@ -45,10 +46,10 @@ const initialProducts = createProducts(100);
 
 export default class MockProductsApi {
     /**
-     * Fetch paginated set of products 
+     * Fetch paginated set of products
      * @param {Number} start Starting offset
      * @param {Number} end  Ending offset for pagination
-     * @returns {Array} products The paginated set of products 
+     * @returns {Array} products The paginated set of products
      */
     static async fetchProducts(start, end) {
         await delay(randomDelay());
@@ -59,7 +60,7 @@ export default class MockProductsApi {
         await delay(2);
         return PRODUCT_CATEGORIES;
     }
-    
+
     static async filterProducts(filters, start, end) {
         // Filters is an array of the set of filters to apply
         await delay(randBetween(0, 3));

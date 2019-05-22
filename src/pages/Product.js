@@ -8,7 +8,7 @@ export default class ProductsPage extends React.Component {
     this.state = {
       products: [],
       start: 0,
-      size: 10,
+      size: 15,
       categories: [],
       filters: []
     };
