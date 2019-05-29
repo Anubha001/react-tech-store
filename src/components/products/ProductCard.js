@@ -8,7 +8,6 @@ export default class ProductCard extends React.Component {
             id,
             name,
             category,
-            types,
             logo
         } = this.props;
         return (

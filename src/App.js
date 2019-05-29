@@ -27,14 +27,9 @@ export default function App() {
      <Switch>
 
 <Route path="/" exact component = { HomePage }/>
-
 <Route path="/about" component = { AboutPages }/>
-
 <Route path="/contact" component = { ContactPage }/>
-
 <Route path="/product" component = { Product}/>
-
-
 <Route path="/products" exact component = { ProductPage}/>
 <Route path="/cart" component = { CartPages }/>
 <Route path="/detail" component = { Detail }/>

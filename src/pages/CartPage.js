@@ -1,9 +1,14 @@
 import React from 'react'
-
+import Hero from '../components/Hero'
+import storeBcg from '../images/storeBcg.jpeg'
+import Cart from '../pages/Cart'
 function CartPage() {
   return (
     <div>
-       hello froom about cartPages
+  
+
+   <Cart></Cart>
+       <img src={storeBcg}></img>
     </div>
   )
 }
