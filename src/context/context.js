@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { linkData } from "./linkData";
 import { socialData } from "../contact/SocilaData";
 import { items } from "../context/ProductData";
-import { isTSEnumMember } from "@babel/types";
+
+import { client } from '../context/contentful'
 const ProductContext = React.createContext();
 //Provider
 //Consumer
@@ -16,17 +17,32 @@ class ProductProvider extends Component {
     cartItems: 10,
     cartSubTotal: 0,
     cartTax: 0,
-    carTotal: 0,
+    cartTotal: 0,
     storeProducts: [],
     filteredProducts: [],
     featuredProducts: [],
     singleProduct: {},
     loading: false,
-    product: []
+    product: [],
+    search: "",
+    price: 0,
+    min:0,
+    max: 0,
+    company: "all",
+    shipping: true
+
   };
   componentWillMount() {
     //from contentful items
-    this.setProducts(items);
+   this.setProducts(items);
+
+  client
+  .getEntries({
+    content_type:"techStoreProductExample"
+  })
+  .then(response => this.setProducts(response.items))
+  .catch(err => console.log(err));
+
   }
 
   //set products
@@ -39,7 +55,15 @@ class ProductProvider extends Component {
       return product;
     });
     //  featured products
-    let featuredProducts = storeProducts.filter(item => item.featured === true);
+    let featuredProducts = storeProducts.filter(item => 
+      item.featured === true);
+//get max products
+let maxPrice = Math.max(...storeProducts.map(item =>
+  item.price));
+  console.log(maxPrice);
+
+
+
     this.setState(
       {
       storeProducts,
@@ -219,6 +243,49 @@ this.setState({
 
 })
 };
+//handle filtering
+handleChange = event => {
+  const name = event.target.name;
+  const value =
+    event.target.type === "checkbox"
+      ? event.target.checked
+      : event.target.value;
+  this.setState(
+    {
+      [name]: value
+    },
+    this.sortData
+  );
+};
+sortData = () => {
+  const { storeProducts, price, company, shipping, search } = this.state;
+
+  let tempPrice = parseInt(price);
+
+  let tempProducts = [...storeProducts];
+  // filtering based on price
+  tempProducts = tempProducts.filter(item => item.price <= tempPrice);
+  // filtering based on company
+  if (company !== "all") {
+    tempProducts = tempProducts.filter(item => item.company === company);
+  }
+  if (shipping) {
+    tempProducts = tempProducts.filter(item => item.freeShipping === true);
+  }
+  if (search.length > 0) {
+    tempProducts = tempProducts.filter(item => {
+      let tempSearch = search.toLowerCase();
+      let tempTitle = item.title.toLowerCase().slice(0, search.length);
+      if (tempSearch === tempTitle) {
+        return item;
+      }
+    });
+  }
+  this.setState({
+    filteredProducts: tempProducts
+  });
+};
+
   render() {
     return (
       <ProductContext.Provider
@@ -233,7 +300,8 @@ this.setState({
           increment:this.increment,
           decrement:this.decrement,
           removeItem:this.removeItem,
-          clearCart:this.clearCart
+          clearCart:this.clearCart,
+          handleChange:this.handleChange
         }}
       >
         {this.props.children}

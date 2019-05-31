@@ -7,7 +7,7 @@ function ContactPage() {
   return (
     <div>
      <Hero img={contactImg}> </Hero>
-     <Contact></Contact>
+   <Contact></Contact>
     </div>
   )
 }
