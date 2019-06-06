@@ -233,7 +233,7 @@ removeItem = id=>{
 }
   )
 };
-clearCart=()=>{
+clearCart = () => {
 this.setState({
   cart:[]
 },()=>

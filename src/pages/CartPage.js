@@ -5,10 +5,8 @@ import Cart from '../pages/Cart'
 function CartPage(props) {
   return (
     <>
-  
-
-   <Cart history={props.history}></Cart>
-       <img src={storeBcg} style={{width:'100%'}}></img>
+       <Hero img ={storeBcg} ></Hero>
+       <Cart history = {props.history}></Cart>
     </>
   )
 }

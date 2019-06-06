@@ -1,7 +1,7 @@
+
 import React from 'react'
 import Title from '../components/Title'
-import CartTotal from './CartTotal'
-
+import CartTotals from './CartTotal'
 import CartColoumn from '../pages/CartColoumn'
 import CartLIst from './CartLIst';
 export default function Cart(history) {
@@ -18,8 +18,8 @@ export default function Cart(history) {
              {/*cart List*/ }
             <CartLIst></CartLIst>
              {/*cart Totals*/ }
-            <CartTotal history={history}></CartTotal>
-
+          
+<CartTotals history ={history}></CartTotals>
         </section>
 
     )

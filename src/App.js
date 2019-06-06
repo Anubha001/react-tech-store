@@ -1,7 +1,7 @@
 import React from 'react';
 import HomePage from './pages/HomePage'
 import  AboutPages from "./pages/AboutPages"
-import CartPages from './pages/CartPage'
+import CartPage from './pages/CartPage'
 import ContactPage from './pages/ContactPage'
 import Default from './pages/Default'
 import Product from './pages/Product'
@@ -15,6 +15,7 @@ import Sidebar from './components/Sidebar'
 import Sidecar from './components/Sidecar';
 import Detail from './pages/Detail'
 import ProductPage from './pages/ProductPage'
+import Hello from '../src/Hello'
 export default function App() {
   return  < >
    { /*navbar, sidebar,cart,footer */}
@@ -31,10 +32,10 @@ export default function App() {
 <Route path="/contact" component = { ContactPage }/>
 <Route path="/product" component = { Product}/>
 <Route path="/products" exact component = { ProductPage}/>
-<Route path="/cart" component = { CartPages }/>
+<Route path="/cart" component = { CartPage }/>
 <Route path="/detail" component = { Detail }/>
 <Route path="/products/:id" exact component = { SingleProductPage }/>
-
+<Route path="/hello" exact component = { Hello }/>
 
 <Route component = { Default } />
        </Switch>
