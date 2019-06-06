@@ -24,11 +24,8 @@ export default function Filter() {
             ["company"]);
           }
         
-
             companies = [...companies];
           
-
-
           return (
             <div className="row my-5">
               <div className="col-10 mx-auto">

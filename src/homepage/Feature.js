@@ -11,22 +11,15 @@ export default class Feature extends Component {
        <div className="container">
        <Title title="featured products"center='true' ></Title>
        <div className="row">
-       
 <ProductConsumer>
-
-
   {value => {
 
 const {featuredProducts} = value;
 return featuredProducts.map(product =>(<Product key={product.id} product={product}></Product>))
   }}
 </ProductConsumer>
-
-
-       
        </div>
        </div>
-
       </section>
     )
   }
